@@ -1,0 +1,41 @@
+/* You cannot set widths on inline elements. */
+
+
+body {
+    font-size: 1.2em;
+    font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+/* > says that the span must be a direct child of the brand class */
+.brand > span {
+    font-size: 4em;
+}
+
+header {
+    background-color: blue;
+}
+
+.brand {
+    color: white;
+    display: grid;
+    grid-template-columns: 60px auto;
+    max-width: 500px;
+    align-items: center;
+}
+
+.brand > h1 {
+    display: inline;
+    margin-left: .5em;
+}
+
+.post-summary {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    align-items: center;
+    max-width: 700px;
+    margin: 0 auto;
+}
+
+.post-summary img {
+    display: block;
+}
