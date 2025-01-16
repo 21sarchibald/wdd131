@@ -22,3 +22,19 @@ newSection.innerHTML = `
 <h3>${subtitle}</h3>
 <p>${content}</p>`;
 document.body.append(newSection);
+
+const ingredientData = ["Pinto Beans", "Corn", "Spices", "Tortillas"];
+const portionData = ["1 15oz can", "1 15oz can", "1 Tbsp", "8"];
+
+function ingredientTemplate(index)
+{
+    return `<li>${portionData[index]} ${ingredientData[index]}</li>`
+}
+
+const ingredientList = document.createElement("ul");
+ingredientData.forEach(function(item, index) {
+    ingredientList.innerHTML += ingredientTemplate(index);
+})
+
+
+document.body.append(ingredientList);
