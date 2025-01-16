@@ -32,6 +32,9 @@ function ingredientTemplate(index)
 }
 
 const ingredientList = document.createElement("ul");
+
+// How to add a class to an item in Javascript.
+ingredientList.classList.add("dark");
 ingredientData.forEach(function(item, index) {
     ingredientList.innerHTML += ingredientTemplate(index);
 })
