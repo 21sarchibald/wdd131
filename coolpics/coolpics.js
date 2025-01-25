@@ -10,10 +10,16 @@ const menuButton = document.querySelector("#menu-button");
 menuButton.addEventListener("click", toggleMenu);
 
 function handleResize() {
+    const menu = document.querySelector("#menu-items");
+    
     if (window.innerWidth > 1000) {
-        menuItems.classList.remove("hide");
+        menu.classList.remove("hide");
+    }
+    else {
+        menu.classList.add("hide");
     }
 }
+handleResize();
 
 window.addEventListener("resize", handleResize);
 
