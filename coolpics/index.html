@@ -7,14 +7,14 @@
     <meta author="Sophie Archibald">
     <title>Cool Pics</title>
     <link rel="stylesheet" href="coolpics.css">
-    <script src="coolpics.js"></script>
+    <script src="coolpics.js" defer></script>
 </head>
 <body>
     <header>
         <h1>Cool Pics 📷</h1>
         <nav>
-            <h2>Menu</h2>
-            <ul>
+            <button id="menu-button">Menu</button>
+            <ul class="hide" id="menu-items">
                 <li><a href="#">Home</a></li>
                 <li><a href="#">People</a></li>
                 <li><a href="#">Places</a></li>
@@ -27,9 +27,6 @@
     <main>
         <h2>Current Work</h2>
         <section class="gallery">
-            <figure>
-                <img src="norris-sm.jpeg" alt="picture">
-            </figure>
             <figure>
                 <img src="norris-sm.jpeg" alt="picture">
             </figure>
