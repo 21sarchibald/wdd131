@@ -52,57 +52,73 @@ a:hover {
 main {
     display: grid;
     grid-template-columns: 25% 50% 25%;
-    grid-template-rows: 1fr 1fr;
     column-gap: 50px;
     align-items: start;
     padding: 30px;
     margin: 0 50px;
+    max-width: 1200px;
 }
 
 .date {
     font-weight: normal;
 }
 
-#review-1-details {
+.review-details-0 {
     grid-column: 1;
     text-align: right;
-    align-items: start;
+    /* align-items: start; */
     grid-row: 1;
     padding: 10px 0;
     line-height: .5em;
+    align-self: start;
+    line-height: 20px;
+    
 }
 
-/* h2, img, .description  */
+.review-details-1 {
+    grid-column: 1;
+    text-align: right;
+    /* align-items: start; */
+    grid-row: 2;
+    padding: 10px 0;
+    line-height: .5em;
+    align-self: start;
+    line-height: 20px;
+}
 
-#review-1-items {
+.review-details-2 {
+    grid-column: 1;
+    text-align: right;
+    /* align-items: start; */
+    grid-row: 3;
+    padding: 10px 0;
+    line-height: .5em;
+    align-self: start;
+    line-height: 20px;
+}
+
+.review-items-0 {
     grid-column: 2;
     grid-row: 1;
     padding: 0 30px;
     border-left: solid #EFC69B;
 }
 
-#review-1-items > img {
-    display: block;
-    margin: 0 auto;
-}
-
-#review-2-details {
-    grid-column: 1;
-    text-align: right;
-    align-items: start;
-    grid-row: 2;
-    padding: 10px 0;
-    line-height: .5em;
-}
-
-#review-2-items {
+.review-items-1 {
     grid-column: 2;
     grid-row: 2;
     padding: 0 30px;
     border-left: solid #EFC69B;
 }
 
-#review-2-items > img {
+.review-items-2 {
+    grid-column: 2;
+    grid-row: 3;
+    padding: 0 30px;
+    border-left: solid #EFC69B;
+}
+
+img {
     display: block;
     margin: 0 auto;
 }
