@@ -19,6 +19,23 @@ const aCourse = {
     enrollStudent: function(sectionNum) {
         console.log(sectionNum);
         console.log(this.sections);
+
+        const sectionIndex = this.sections.findIndex((section) => section.sectionNum == sectionNum);
+
+        if (sectionIndex >=0) {
+
+            this.sections[sectionIndex].enrolled += 1;
+            renderSections(this.sections);
+
+        }
+    },
+    dropStudent: function(sectionNum) {
+        const sectionIndex = this.sections.findIndex((section) => section.sectionNum == sectionNum);
+
+        if (sectionIndex >= 0) {
+            this.sections[sectionIndex].enrolled -= 1;
+            renderSections(this.sections);
+        }
     }
   };
 
@@ -55,5 +72,9 @@ displayCourseInfo(aCourse);
 renderSections(aCourse.sections);
 
 document.querySelector("#enrollStudent").addEventListener("click", function() {
-    aCourse.enrollStudent(1);
+    aCourse.enrollStudent(document.querySelector("#sectionNumber").value);
 })
+
+document.querySelector("#dropStudent").addEventListener("click", function() {
+    aCourse.dropStudent(document.querySelector("#sectionNumber").value);
+});
