@@ -32,3 +32,27 @@
   .hide {
     display: none; /* Initially hide the credit card input and label */
   }
+
+  input {
+    width: 600px;
+    height: 40px;
+  }
+
+  textarea {
+    width: 600px;
+  }
+
+  select {
+    width: 600px;
+    height: 40px;
+  }
+
+  button {
+    color: white;
+    background-color: #03C04A;
+    border: none;
+    border-radius: 5px;
+    width: 100px;
+    height: 40px;
+    margin-top: 20px;
+  }
