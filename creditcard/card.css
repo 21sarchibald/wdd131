@@ -20,7 +20,7 @@ body {
     box-shadow: 5px 5px 10px rgb(0, 0, 0, 0.3);
     border-radius: 5px;
     display: grid;
-    grid-template-columns: 5;
+    grid-template-columns: repeat(5, 70px);
     grid-template-rows: 3;
 }
 
@@ -37,8 +37,8 @@ body {
 
 .card-image {
     text-align: center;
-    grid-column: 5;
-    align-self: right;
+    grid-column: 4/6;
+    justify-self: center;
 }
 
 #card-number-input {
@@ -49,7 +49,34 @@ body {
     width: 310px;
 }
 
+#card-holder-input {
+    grid-column: 1/4;
+}
+
+#card-holder {
+    width: 180px;
+    margin-right: 20px;
+}
+
+#expiration-input {
+    grid-column: 4/6;
+}
+
+#expiration-input > label {
+    display: block;
+}
+
+#expiration-month, #expiration-year {
+    width: 30px;
+}
+
+#expiration-month {
+    margin-right: 5px;
+}
+
 #submit-button {
     grid-column: 4;
-    grid-row: 7;
+    grid-row: 6;
+    margin: 15px 0 0 15px;
+    border-radius: 5px;
 }
