@@ -12,7 +12,10 @@ function submitHandler(event) {
     let errorMessage = "";
     displayErrorMessage(errorMessage);
 
-    console.log(Number(this.cardNumber.value));
+    const year = parseInt(this.expirationYear.value) + 2000;
+    const month = parseInt(this.expirationMonth.value) - 1;
+    let expirationDate = new Date(year, month);
+    let currentDate = new Date();
 
     if (isNaN(this.cardNumber.value)) {
         errorMessage = "Entered card number is not valid.";
@@ -22,10 +25,15 @@ function submitHandler(event) {
         errorMessage = "Entered card number is not valid.";
     }
 
+    else if (expirationDate <= currentDate) {
+        errorMessage = "Card is expired.";
+    }
+
     if (errorMessage != "") {
         displayErrorMessage(errorMessage);
         return false;
     }
+
     return true;
 }
 
