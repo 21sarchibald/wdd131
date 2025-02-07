@@ -79,6 +79,13 @@ body {
     margin-right: 5px;
 }
 
+#blackBar {
+    background-color: black;
+    grid-column: 3;
+    grid-row: 2/4;
+    z-index: 0;
+}
+
 #submitButton {
     grid-column: 4;
     grid-row: 6;
