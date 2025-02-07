@@ -1,5 +1,6 @@
 body {
     margin: 0 auto;
+    font-family: 'Courier New', Courier, monospace;
 }
 
 #cardForm {
@@ -36,6 +37,7 @@ body {
 
 #total {
     display: inline;
+    grid-column: 1/3;
 }
 
 .cardImage {
