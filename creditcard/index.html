@@ -4,6 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Credit Card</title>
+    <meta description="Credit Card Input Form">
     <meta author="Sophie Archibald">
     <script src="card.js" defer></script>
     <link rel="stylesheet" href="card.css">
@@ -20,18 +21,18 @@
             
             <div id="card-number-input">
                 <label for="card-number">CARD NUMBER</label>
-                <input type="text" id="card-number" placeholder="1234 5678 9101 1020">
+                <input type="text" id="card-number" placeholder="1234 5678 9101 1020" required>
             </div>
 
             <div id="card-holder-input">
                 <label for="card-holder">CARD HOLDER</label>
-                <input type="text" id="card-holder" placeholder="Jane Doe">
+                <input type="text" id="card-holder" placeholder="Jane Doe" required>
             </div>
 
             <div id="expiration-input">
                 <label for="expiration">EXPIRATION</label>
-                <input type="text" id="expiration-month" placeholder="MM">
-                <input type="text" id="expiration-year" placeholder="YY">
+                <input type="text" id="expiration-month" placeholder="MM" required>
+                <input type="text" id="expiration-year" placeholder="YY" required>
             </div>
 
         </div>
@@ -40,12 +41,12 @@
 
             <div id="security-input">
                 <label for="security-code">CVC/CVV</label>
-                <input type="text" id="security-code" placeholder="xxx">
+                <input type="text" id="security-code" placeholder="xxx" required>
             </div>
             
         </div>
 
-        <button id="submit-button">Submit</button>
+        <button type="submit" id="submit-button">Submit</button>
 
     </form>
     
