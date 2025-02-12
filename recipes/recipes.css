@@ -1,0 +1,19 @@
+* {
+    margin: 0 auto;
+}
+
+header img {
+    display: inline;
+}
+
+#searchForm input, #searchForm img {
+    height: 20px;
+}
+
+footer a {
+    font-size: 0.6em;
+}
+
+footer img {
+    width: 40px;
+}
