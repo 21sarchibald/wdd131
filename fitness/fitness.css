@@ -2,3 +2,64 @@
 
 @import url('https://fonts.googleapis.com/css2?family=Exo:ital,wght@0,100..900;1,100..900&display=swap');
 
+/* --primary-color: #2F3C7E;
+--secondary-color: #D4D4DF;
+--accent1-color: #363637;
+--accent2-color: white; */
+
+* {
+    margin: 0 auto;
+}
+
+p {
+    font-family: "Exo", serif;
+}
+
+
+header {
+    background-color: #D4D4DF;
+    text-align: center;
+    font-family: "Exo", serif;
+    margin: 0 auto;
+}
+
+header > ul {
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 0;
+}
+
+header > img {
+    width: 200px;
+}
+
+header li {
+    padding: 5px;
+    color: #2F3C7E;
+    background-color: #D4D4DF;
+}
+
+header a {
+    color: #2F3C7E;
+}
+
+header a:hover {
+    background-color: #2F3C7E;
+    color: #D4D4DF;
+}
+
+main img {
+    max-width: 100%;
+}
+
+#exercise-info {
+    background-color: #363637;
+    color: #D4D4DF;
+    padding: 20px;
+}
+
+#exercise-info p {
+    padding-bottom: 40px;
+}
