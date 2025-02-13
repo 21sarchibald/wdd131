@@ -68,12 +68,35 @@ const hikes = [
   ];
    const simpleList = ["oranges", "grapes", "lemons", "apples", "Bananas", "watermelons", "coconuts", "broccoli", "mango"];
   
-   const simpleSort = simpleList.sort();
-   console.log(simpleSort);
-
-   function searchList(list, string) {
-    function searchCallback(string, queryString) {
-        return string.includes(queryString) 
+   function compareFn(a,b) {
+    if (a.name.toLowerCase() < b.name.toLowerCase()) {
+      return -1;
+    } else if (a.name.toLowerCase() > b.name.toLowerCase()) {
+      return 1;
     }
-    list.filter(searchCallback);
+   // a must be equal to b
+   return 0;
+  }
+
+
+  function searchList(list, query) {
+    function searchCallback(item) {
+        return (item.name.toLowerCase().includes(query.toLowerCase()) || 
+        item.description.toLowerCase().includes(query.toLowerCase())) ||
+        item.tags.find((string) => string.toLowerCase().includes(query.toLowerCase()));
+    }
+    let filteredList = list.filter(searchCallback);
+    return filteredList.sort(compareFn);
    }
+
+
+  // console.log("pre-sort", simpleList);
+  // const simpleSort = simpleList.sort(compareFn);
+  // console.log("post-sort", simpleList);
+  // console.log("sorted", simpleSort);
+
+  // console.log("hikes", hikes.sort(compareFn));
+  // console.log("search", searchList(simpleList, "an"));
+  // console.log("search", searchList(simpleList, "an").sort());
+  // console.log("search", searchList(simpleList, "b"));
+  console.log("hikes", searchList(hikes, "al"));
