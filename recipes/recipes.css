@@ -51,6 +51,20 @@ button {
     padding: 0;
 }
 
+section {
+    text-align: left;
+    border: solid black;
+    margin: 20px;
+    padding: 20px;
+}
+
+.recipeTag {
+    font-size: 1.5em;
+    border: solid black;
+    width: 70px;
+    padding: 5px 10px;
+}
+
 .recipeName {
     font-family: "PT Sans Narrow", serif;
     color: var(--primary-color);
