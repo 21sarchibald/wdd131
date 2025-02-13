@@ -1,13 +1,68 @@
+@import url('https://fonts.googleapis.com/css2?family=Delius&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=PT+Sans+Narrow:wght@400;700&display=swap');
+:root {
+--primary-color: #1B98E0;
+--secondary-color: #59c3c3;
+--text-dark: #333;
+--text-light: #ebebeb;
+--primary-font: Arial, Helvetica,sans-serif;
+--secondary-font: "Amatic SC";
+}
+
 * {
     margin: 0 auto;
 }
 
-header img {
-    display: inline;
+img {
+    max-width: 100%;
 }
 
-#searchForm input, #searchForm img {
+header img {
+    display: inline;
+    width: 100px;
+}
+
+header {
+    font-family: "PT Sans Narrow", serif;
+    font-size: 3.5em;
+    padding: 30px;
+}
+
+#searchForm {
+    text-align: center;
+    padding: 0;
+}
+
+button {
+    margin: 0;
+}
+
+#searchForm input {
+    width: 80%;
+    margin-right: 0;
+    padding: 0;
+    height: 30px;
+    font-size: 1.3em;
+}
+
+#searchForm img {
     height: 20px;
+    margin-left: 0;
+    padding: 0;
+}
+
+.recipeName {
+    font-family: "PT Sans Narrow", serif;
+    color: var(--primary-color);
+    font-size: 2em;
+}
+
+.rating {
+    font-size: 1.3em;
+}
+
+footer {
+    text-align: center;
 }
 
 footer a {
