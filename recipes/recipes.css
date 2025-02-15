@@ -24,6 +24,7 @@ header {
     font-size: 3.4em;
     padding: 0px 30px;
     margin: 0 auto;
+    text-align: center;
 }
 
 body {
@@ -58,9 +59,15 @@ section {
     text-align: left;
     border: solid black;
     border-radius: 10px;
-    margin: 20px;
-    padding: 20px;
+    margin: 5%;
+    padding: 25px;
+    display: flex;
+    flex-direction: column;
+}
 
+#recipeInfo {
+    display: flex;
+    flex-direction: column;
 }
 
 .recipeTag {
@@ -70,11 +77,6 @@ section {
     padding: 5px 10px;
     margin-top: 5px;
     margin-bottom: 0px;
-}
-
-#recipeInfo {
-    display: flex;
-    flex-direction: column;
 }
 
 .recipeName {
@@ -90,8 +92,10 @@ section {
 
 footer {
     text-align: center;
-    margin: 20px;
     padding: 20px 0px 0px 0px;
+    display: flex;
+    justify-content: center;
+    align-items: flex-end;
 }
 
 footer a {
@@ -100,4 +104,43 @@ footer a {
 
 footer img {
     width: 40px;
+}
+
+@media screen and (min-width: 600px) {
+
+    section {
+        flex-direction: row;
+    }
+
+    #recipeInfo {
+        margin-left: 20px;
+    }
+
+    img {
+        max-width: 500px;
+    }
+
+    .social {
+        width: 100%;
+        display: flex;
+        flex-direction: row-reverse;
+        justify-content: space-between;
+        margin: 0 20px;
+    }
+    
+    .social a {
+        justify-self: left;
+    }
+
+    .social img {
+        justify-self: flex-end;
+    }
+
+}
+
+@media screen and (max-width: 960px)
+{
+    * {
+        max-width: 960px;
+    }
 }
