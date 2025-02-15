@@ -69,12 +69,14 @@ function renderRecipes(recipeList) {
     const recipeSection = document.querySelector("#recipe");
 
 	// use the recipeTemplate function to transform our recipe objects into recipe HTML strings
-
-    console.log(recipeTemplate(recipeList[0]));
+    let recipeOutput = ``;
+    recipeList.forEach(recipe => {
+        recipeOutput += recipeTemplate(recipe);
+    });
 
 	// Set the HTML strings as the innerHTML of our output element.
 
-    recipeSection.innerHTML = recipeTemplate(recipeList[0]);
+    recipeSection.innerHTML = recipeOutput;
 
 }
 
@@ -86,3 +88,26 @@ function init() {
   renderRecipes([recipe]);
 }
 init();
+
+function filterRecipes(query) {
+    console.log(query);
+    const lowerQuery = query.toLowerCase();
+
+    function searchCallback(recipe) {
+        console.log(recipe);
+        return (recipe.name.toLowerCase().includes(lowerQuery) ||
+        recipe.description.toLowerCase().includes(lowerQuery) ||
+        recipe.tags.find((string) => string.toLowerCase().includes(lowerQuery)) ||
+        recipe.recipeIngredient.find((string) => string.toLowerCase().includes(lowerQuery)));
+    }
+
+    renderRecipes(recipes.filter(searchCallback));
+
+}
+
+document.querySelector("#searchForm").addEventListener("submit", function(event)
+{
+    event.preventDefault();
+    const query = document.querySelector("#searchInput").value;
+    filterRecipes(query);
+});
