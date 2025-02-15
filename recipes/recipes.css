@@ -9,6 +9,10 @@
 --secondary-font: "Amatic SC";
 }
 
+.hide {
+    display: none;
+    border: none;
+}
 img {
     max-width: 100%;
 }
@@ -74,7 +78,7 @@ section {
 .recipeTag {
     font-size: 1.3em;
     border: solid black;
-    width: 70px;
+    width: max-content;
     padding: 5px 10px;
     margin-top: 5px;
     margin-bottom: 0px;
