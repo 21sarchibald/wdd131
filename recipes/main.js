@@ -10,15 +10,12 @@ function getRandomItem(array) {
 }
 
 function tagsTemplate(tags) {
-    console.log(tags);
     let tagsHtml = `<p class="recipeTag">${tags[0]}</p>`;
-    console.log(tags.length);
     for (let i = 1; i < tags.length; i++)
     {
             tagsHtml += `<p class="recipeTag">${tags[i]}</p>`;
     }
-
-	return tagsHtml;
+    return tagsHtml;
 }
 
 function ratingTemplate(rating) {
@@ -51,7 +48,7 @@ function recipeTemplate(recipe) {
     return `
             <img class="recipeImage" src="${recipe.image}" alt="Image of ${recipe.name}">
             <div id="recipeInfo">
-                <p class="recipeTag">${tagsTemplate(recipe.tags)}</p>
+                ${tagsTemplate(recipe.tags)}
                 <p class="recipeName">${recipe.name}</p>
             
                 ${ratingTemplate(recipe.rating)}
