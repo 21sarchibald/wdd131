@@ -9,10 +9,6 @@
 --secondary-font: "Amatic SC";
 }
 
-* {
-    margin: 0 auto;
-}
-
 img {
     max-width: 100%;
 }
@@ -20,17 +16,24 @@ img {
 header img {
     display: inline;
     width: 100px;
+    margin: 0 auto;
 }
 
 header {
     font-family: "PT Sans Narrow", serif;
-    font-size: 3.5em;
-    padding: 30px;
+    font-size: 3.4em;
+    padding: 0px 30px;
+    margin: 0 auto;
+}
+
+body {
+    margin: 0 auto;
 }
 
 #searchForm {
     text-align: center;
-    padding: 0;
+    padding: 0 0 20px 0;
+    border-bottom: solid gray;
 }
 
 button {
@@ -54,8 +57,10 @@ button {
 section {
     text-align: left;
     border: solid black;
+    border-radius: 10px;
     margin: 20px;
     padding: 20px;
+
 }
 
 .recipeTag {
@@ -63,12 +68,20 @@ section {
     border: solid black;
     width: 70px;
     padding: 5px 10px;
+    margin-top: 5px;
+    margin-bottom: 0px;
+}
+
+#recipeInfo {
+    display: flex;
+    flex-direction: column;
 }
 
 .recipeName {
     font-family: "PT Sans Narrow", serif;
     color: var(--primary-color);
     font-size: 2em;
+    margin-bottom: 0px;
 }
 
 .rating {
@@ -78,7 +91,7 @@ section {
 footer {
     text-align: center;
     margin: 20px;
-    padding: 100px;
+    padding: 20px 0px 0px 0px;
 }
 
 footer a {
