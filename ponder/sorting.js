@@ -100,3 +100,12 @@ const hikes = [
   // console.log("search", searchList(simpleList, "an").sort());
   // console.log("search", searchList(simpleList, "b"));
   console.log("hikes", searchList(hikes, "al"));
+
+  localStorage.setItem("test", "This is a test!");
+
+  function setLocalStorage(key, data) { // set needs a key and the data
+    localStorage.setItem(key, JSON.stringify(data));
+  }
+  function getLocalStorage(key) {
+    return JSON.parse(localStorage.getItem(key));
+  }
