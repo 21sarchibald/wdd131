@@ -117,7 +117,7 @@ h1 {
 
     #exercise-info {
         grid-column: 1/2;
-        width: 400px;
+        width: 100%;
         display: inline;
         background-color: #363637;
         padding: 30px;
@@ -126,10 +126,23 @@ h1 {
 
     main {
         display: grid;
-        justify-content: left;
+        grid-template-columns: 30% 70%;
+    }
+
+    h1 {
+        grid-row: 1;
+        grid-column: 2/3;
+        margin: 10px 0 0 100px;
+        justify-self: center;
+        text-align: center;
     }
 
     .exerciseEntry {
-        width: 50%;
+        width: 60%;
+        height: 150px;
+        margin: 100px 0px 50px 50px;
+        grid-row: 1;
+        grid-column: 2/3;
+        justify-self: center;
     }
 }
