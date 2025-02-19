@@ -51,17 +51,42 @@ header a:hover {
     color: #D4D4DF;
 }
 
+main {
+    display: grid;
+    grid-template-columns: 1fr 93%;
+}
+
+h1 {
+    padding: 20px;
+    
+}
+
+.exerciseEntry {
+    grid-column: 2;
+    background-color: #D4D4DF;
+    padding: 30px;
+    width: 70%;
+}
+
+.exerciseEntry h2 {
+    margin-bottom: 20px;
+}
+
 #side-bar {
     display: grid;
-    grid-template-columns: 93% 1fr;
-    background-color: #363637;
+    grid-template-columns: 1fr 93%;
     color: #D4D4DF;
     padding: 0;
+    grid-column: 1;
+    grid-row: 1/3;
+    height: 100%;
+    /* ^change this^ */
 }
 
 #exercise-info {
     padding: 20px;
-    grid-column: 1;
+    grid-column: 2;
+    background-color: #363637;
 }
 
 #side-bar img {
@@ -69,16 +94,16 @@ header a:hover {
 }
 
 #side-bar p {
-    grid-column: 1;
+    grid-column: 2;
     padding: 0px 20px 40px 0px;
 }
 
 #sideBarButton {
-    grid-column: 2;
-    grid-row: 1/7;
-    text-align: right;
+    grid-column: 1;
+    grid-row: 1 / -1;
     font-family: "Poppins", serif;
     width: 100%;
+    height: 100%;
 }
 
 #sideBarButton:hover {
@@ -89,7 +114,7 @@ header a:hover {
     display: none;
 }
 
-@media screen and (min-width: 500px) {
+@media screen and (min-width: 400px) {
     .hide {
         display: contents;
     }
@@ -103,7 +128,15 @@ header a:hover {
     }
 
     #side-bar {
-        width: 500px;
+        width: 400px;
+        display: inline;
+        background-color: #363637;
+        padding: 30px;
+        height: 100%;
+    }
+
+    #side-bar p {
+        background-color: #363637;
     }
 
     main {
