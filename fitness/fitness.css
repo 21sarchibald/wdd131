@@ -59,7 +59,7 @@ main {
 
 h1 {
     padding: 20px;
-    
+    font-family: "Titillium", serif;
 }
 
 .exerciseEntry {
@@ -68,10 +68,28 @@ h1 {
     padding: 30px;
     width: 70%;
     margin-bottom: 20px;
+    line-height: 1.7;
 }
 
 .exerciseEntry h2 {
     margin-bottom: 20px;
+    font-family: "Titillium", serif;
+}
+
+.exerciseEntry button {
+    color: #D4D4DF;
+    background-color: #2F3C7E;
+    border-radius: 15px;
+    padding: 10px;
+    margin: 5% 0% 0% 80%;
+    font-family: "Exo", serif;
+}
+
+#newEntry h2 {
+    background-color: #2F3C7E;
+    color: #D4D4DF;
+    text-align: center;
+    font-family: "Titillium", serif;
 }
 
 #exercise-info {
@@ -145,7 +163,6 @@ h1 {
 
     .exerciseEntry {
         width: 80%;
-        height: 150px;
         margin: 5% 10%;
         justify-self: center;
         padding: 20px;
