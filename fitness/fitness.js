@@ -41,3 +41,52 @@ document.querySelector("#newEntry").addEventListener("submit", function(event)
     event.preventDefault();
     addEntry();
 });
+
+localStorage.setItem("test", "This is a test!");
+
+let currentEntries = [
+    {
+        date: "02/16/2025",
+        type: "Running",
+        reps: "N/A",
+        heartRate: "164",
+        duration: "20 minutes"
+    },
+    {
+        date: "02/17/2025",
+        type: "Boxing",
+        reps: "N/A",
+        heartRate: "164",
+        duration: "60 minutes"
+    },
+    {
+        date: "02/18/2025",
+        type: "Cycling",
+        reps: "N/A",
+        heartRate: "168",
+        duration: "50 minutes"
+    },
+    {
+        date: "02/19/2025",
+        type: "Situps",
+        reps: "100",
+        heartRate: "144",
+        duration: "15 minutes"
+    }
+]
+
+// for (let i = 0; i < currentEntries.length; i++) {
+//     setLocalStorage(i, currentEntries[i])
+// }
+
+setLocalStorage("currentEntries", currentEntries);
+
+console.log(getLocalStorage("currentEntries"));
+
+
+function setLocalStorage(key, data) { // set needs a key and the data
+  localStorage.setItem(key, JSON.stringify(data));
+}
+function getLocalStorage(key) {
+  return JSON.parse(localStorage.getItem(key));
+}
