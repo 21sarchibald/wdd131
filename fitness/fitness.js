@@ -42,18 +42,11 @@ function addEntry() {
 
 let currentEntries = [
     {
-        date: "02/19/2025",
-        type: "Situps",
-        reps: "100",
-        heartRate: "144",
-        duration: "15"
-    },
-    {
-        date: "02/18/2025",
-        type: "Cycling",
+        date: "02/16/2025",
+        type: "Running",
         reps: "N/A",
-        heartRate: "168",
-        duration: "50"
+        heartRate: "164",
+        duration: "20"
     },
     {
         date: "02/17/2025",
@@ -63,13 +56,19 @@ let currentEntries = [
         duration: "60"
     },
     {
-        date: "02/16/2025",
-        type: "Running",
+        date: "02/18/2025",
+        type: "Cycling",
         reps: "N/A",
-        heartRate: "164",
-        duration: "20"
-    }
-    
+        heartRate: "168",
+        duration: "50"
+    },
+    {
+        date: "02/19/2025",
+        type: "Situps",
+        reps: "100",
+        heartRate: "144",
+        duration: "15"
+    } 
 ]
 
 setLocalStorage("currentEntries", currentEntries);
