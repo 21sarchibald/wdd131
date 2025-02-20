@@ -13,8 +13,8 @@ document.querySelector("#sideBarButton").addEventListener("click", toggleSideBar
 let entries = document.querySelector(".entries");
 
 function addEntry() {
-    
-    currentEntries.unshift(
+    console.log("run");
+    currentEntries.push(
         {
             date: document.querySelector("#dateInput").value,
             type: document.querySelector("#typeInput").value,
@@ -23,16 +23,21 @@ function addEntry() {
             duration: document.querySelector("#durationInput").value
         }
     )
-console.log("working");
+    setLocalStorage("currentEntries", currentEntries);
+    entries.innerHTML +=
+        `
+            <div class="exerciseEntry">
+                <h2>Date: ${entry.date}</h2>
+                <p class="type">Exercise Type: ${entry.type}</p>
+                <p class="reps">Reps: ${entry.reps}</p>
+                <p class="heartRate">Heart Rate: ${entry.heartRate} bpm</p>
+                <p class="duration">Duration: ${entry.duration} minutes</p>
+            </div>
+        `
+    console.log("run");
 }
 
 // document.querySelector("#newEntry").addEventListener("submit", addEntry);
-
-document.querySelector("#newEntry").addEventListener("submit", function(event)
-{
-    event.preventDefault();
-    addEntry();
-});
 
 
 let currentEntries = [
@@ -75,6 +80,7 @@ console.log(getLocalStorage("currentEntries"));
 function setLocalStorage(key, data) { // set needs a key and the data
   localStorage.setItem(key, JSON.stringify(data));
 }
+
 function getLocalStorage(key) {
   return JSON.parse(localStorage.getItem(key));
 }
@@ -83,7 +89,7 @@ function convertToHtml() {
 
     let entryList = getLocalStorage("currentEntries");
     
-    for (let i = 0; i < entryList.length; i++) {
+    for (let i = entryList.length - 1; i > -1; i--) {
        entry = entryList[i];
 
        entries.innerHTML +=
@@ -100,3 +106,10 @@ function convertToHtml() {
 }   
 
 convertToHtml();
+
+document.querySelector("#newEntry").addEventListener("submit", function(event)
+{
+    console.log("works");
+    event.preventDefault();
+    addEntry();
+});
