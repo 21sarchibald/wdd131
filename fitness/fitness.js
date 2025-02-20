@@ -10,36 +10,6 @@ function toggleSideBar() {
 
 document.querySelector("#sideBarButton").addEventListener("click", toggleSideBar);
 
-let entries = document.querySelector(".entries");
-
-function addEntry() {
-    console.log("run");
-    currentEntries.push(
-        {
-            date: document.querySelector("#dateInput").value,
-            type: document.querySelector("#typeInput").value,
-            reps: document.querySelector("#repsInput").value,
-            heartRate: document.querySelector("#heartRateInput").value,
-            duration: document.querySelector("#durationInput").value
-        }
-    )
-    setLocalStorage("currentEntries", currentEntries);
-    entries.innerHTML +=
-        `
-            <div class="exerciseEntry">
-                <h2>Date: ${entry.date}</h2>
-                <p class="type">Exercise Type: ${entry.type}</p>
-                <p class="reps">Reps: ${entry.reps}</p>
-                <p class="heartRate">Heart Rate: ${entry.heartRate} bpm</p>
-                <p class="duration">Duration: ${entry.duration} minutes</p>
-            </div>
-        `
-    console.log("run");
-}
-
-// document.querySelector("#newEntry").addEventListener("submit", addEntry);
-
-
 let currentEntries = [
     {
         date: "02/16/2025",
@@ -84,11 +54,35 @@ function getLocalStorage(key) {
   return JSON.parse(localStorage.getItem(key));
 }
 
+
+let entries = document.querySelector("#pastEntries");
+
+function addEntry() {
+    console.log("run");
+    currentEntries.push(
+        {
+            date: document.querySelector("#dateInput").value,
+            type: document.querySelector("#typeInput").value,
+            reps: document.querySelector("#repsInput").value,
+            heartRate: document.querySelector("#heartRateInput").value,
+            duration: document.querySelector("#durationInput").value
+        }
+    )
+    setLocalStorage("currentEntries", currentEntries);
+    console.log(getLocalStorage("currentEntries"));
+    convertToHtml();
+}
+
+// document.querySelector("#newEntry").addEventListener("submit", addEntry);
+
+
 function convertToHtml() {
+
+    pastEntries.innerHTML = "";
 
     let entryList = getLocalStorage("currentEntries");
     
-    for (let i = entryList.length - 1; i > -1; i--) {
+    for (let i = entryList.length - 1; i >= 0; i--) {
        entry = entryList[i];
 
        entries.innerHTML +=
