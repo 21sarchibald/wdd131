@@ -67,6 +67,7 @@ h1 {
     background-color: #D4D4DF;
     padding: 30px;
     width: 70%;
+    margin-bottom: 20px;
 }
 
 .exerciseEntry h2 {
@@ -75,15 +76,14 @@ h1 {
 
 #exercise-info {
     padding: 20px;
-    grid-column: 2/3;
     background-color: #363637;
     width: 100%;
+    color: #D4D4DF;
 }
 
 #exercise-info img {
     max-width: 100%;
 }
-
 
 #exercise-info p {
     grid-column: 2;
@@ -122,27 +122,32 @@ h1 {
         background-color: #363637;
         padding: 30px;
         height: 100%;
+        justify-self: center;
     }
 
     main {
         display: grid;
         grid-template-columns: 30% 70%;
+        grid-template-rows: 100%;
+    }
+
+    .entries {
+        grid-column: 2/3;
+        width: 70%;
     }
 
     h1 {
         grid-row: 1;
-        grid-column: 2/3;
         margin: 10px 0 0 100px;
         justify-self: center;
         text-align: center;
     }
 
     .exerciseEntry {
-        width: 60%;
+        width: 80%;
         height: 150px;
-        margin: 100px 0px 50px 50px;
-        grid-row: 1;
-        grid-column: 2/3;
+        margin: 5% 10%;
         justify-self: center;
+        padding: 20px;
     }
 }
