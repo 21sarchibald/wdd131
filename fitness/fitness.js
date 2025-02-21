@@ -1,8 +1,8 @@
 function toggleSideBar() {
-    const exerciseInfo = document.querySelector("#exercise-info");
+    const sideBar = document.querySelector("#side-bar");
     const entry = document.querySelector(".exerciseEntry");
     const heading = document.querySelector("h1");
-    exerciseInfo.classList.toggle("hide");
+    sideBar.classList.toggle("hide");
     entry.classList.toggle("hide");
     heading.classList.toggle("hide");
 }

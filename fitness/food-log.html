@@ -5,13 +5,62 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta description="Food tracking page that allows people to input the food they eat along with the calories and grams of protein.">
     <meta author="Sophie Archibald">
-    <title>Fitness Tracker</title>
+    <title>Food Log</title>
+    <link rel="stylesheet" href="fitness.css">
+    <script src="fitness.js" defer></script>
 </head>
 <body>
     <header>
-        
+        <img src="images/logo.png" alt="Logo Image">
+        <ul>
+            <li><a href="index.html">Home</a></li>
+            <li><a href="food-log.html">Food Log</a></li>
+        </ul>
     </header>
     <main>
+            <button id="sideBarButton"><></button>
+            <div class="side-bar" class="hide">
+                <img src="images/yogurt.jpg" alt="Yogurt cup">
+                <p>Another part of maintaining a healthy lifestyle is fueling your body with nutritious and quality food. Eating the right amount and getting enough nutrients will allow you to exercise efficiently and keep your body healthy longer.</p>
+
+                <img src="images/bagel.jpg" alt="Bagel sandwich">
+                <p>Eating food with enough variety and color is crucial to maintaining a healthy diet. Eating different fruits and vegetables can help you to consume the essential vitamins and nutrients you need to stay healthy.</p>
+
+                <img src="images/dinner.jpg" alt="Dinner plate with protein and greens">
+                <p>Eating enough protein is also crucial to staying healthy. Protein is especially crucial for building muscle as you exercise. It will allow you to have the energy and nutrients you need to increase overall fitness.</p>
+            </div>
+        <div class="entries">
+            <h1>Food Log</h1>
+
+            <form id="newEntry" class="exerciseEntry">
+                <h2>Add New Entry</h2>
+                <p class="type">Date: <input type="text" id="dateInput"></p>
+                <p class="type">Exercise Type: <input type="text" id="typeInput"></p>
+                <p class="reps">Reps: <input type="text" id="repsInput"></p>
+                <p class="heartRate">Heart Rate: <input type="text" id="heartRateInput"></p>
+                <p class="duration">Duration: <input type="text" id="durationInput"></p>
+                <button type="submit" id="submitInput">Add Entry</button>
+            </form>
+
+            <div id="pastEntries">
+
+            <!-- <div class="exerciseEntry">
+                <h2>Date: 02/18/2025</h2>
+                <p class="type">Exercise Type: Cycling</p>
+                <p class="reps">Reps: N/A</p>
+                <p class="heartRate">Heart Rate: 168 bpm</p>
+                <p class="duration">Duration: 50 minutes</p>
+            </div>
+
+            <div class="exerciseEntry">
+                <h2>Date: 02/18/2025</h2>
+                <p class="type">Exercise Type: Cycling</p>
+                <p class="reps">Reps: N/A</p>
+                <p class="heartRate">Heart Rate: 168 bpm</p>
+                <p class="duration">Duration: 50 minutes</p>
+            </div> -->
+            </div>
+        </div>
 
     </main>
     <footer>

@@ -92,18 +92,18 @@ h1 {
     font-family: "Titillium", serif;
 }
 
-#exercise-info {
+.side-bar {
     padding: 20px;
     background-color: #363637;
     width: 100%;
     color: #D4D4DF;
 }
 
-#exercise-info img {
+.side-bar img {
     max-width: 100%;
 }
 
-#exercise-info p {
+.side-bar p {
     grid-column: 2;
     padding: 0px 20px 40px 0px;
 }
@@ -133,7 +133,7 @@ h1 {
         display: none;
     }
 
-    #exercise-info {
+    .side-bar {
         grid-column: 1/2;
         width: 100%;
         display: inline;
