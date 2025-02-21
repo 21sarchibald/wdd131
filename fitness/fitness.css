@@ -62,7 +62,7 @@ h1 {
     font-family: "Titillium", serif;
 }
 
-.exerciseEntry {
+.entry {
     grid-column: 2;
     background-color: #D4D4DF;
     padding: 30px;
@@ -71,12 +71,12 @@ h1 {
     line-height: 1.7;
 }
 
-.exerciseEntry h2 {
+.entry h2 {
     margin-bottom: 20px;
     font-family: "Titillium", serif;
 }
 
-.exerciseEntry button {
+.entry button {
     color: #D4D4DF;
     background-color: #2F3C7E;
     border-radius: 15px;
@@ -161,7 +161,7 @@ h1 {
         text-align: center;
     }
 
-    .exerciseEntry {
+    .entry {
         width: 80%;
         margin: 5% 10%;
         justify-self: center;

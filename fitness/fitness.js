@@ -87,7 +87,7 @@ function convertToHtml() {
 
        pastExerciseEntries.innerHTML +=
          `
-            <div class="exerciseEntry">
+            <div class="entry">
                 <h2>Date: ${entry.date}</h2>
                 <p class="type">Exercise Type: ${entry.type}</p>
                 <p class="reps">Reps: ${entry.reps}</p>
