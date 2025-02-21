@@ -74,8 +74,30 @@ function addFoodEntry() {
 
     setLocalStorage("currentFoodEntries", currentFoodEntries);
     console.log(getLocalStorage("currentFoodEntries"));
-    // convertToExerciseHtml();
 }
+
+function convertToFoodHtml() {
+
+    pastFoodEntries.innerHTML = "";
+
+    let entryList = getLocalStorage("currentFoodEntries");
+    
+    for (let key in entryList) {
+       entry = entryList[key];
+
+       pastFoodEntries.innerHTML +=
+         `
+            <div class="entry">
+                <h2 class="date">Date: ${key}}</h2>
+                <p class="food">Foods Eaten: ${entry.foodsEaten})</p>
+                <p class="calories">Total Calories: ${entry.totalCalories}</p>
+                <p class="protein">Total Grams of Protein: ${entry.totalProtein}</p>
+            </div>
+        `
+    }   
+}   
+
+convertToFoodHtml();
 
 const foodEntryForm = document.querySelector("#newFoodEntry");
 
