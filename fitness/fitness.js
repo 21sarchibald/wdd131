@@ -57,7 +57,7 @@ function getLocalStorage(key) {
 
 let pastExerciseEntries = document.querySelector("#pastExerciseEntries");
 
-function addEntry() {
+function addExerciseEntry() {
     console.log("run");
     currentEntries.push(
         {
@@ -73,7 +73,7 @@ function addEntry() {
     convertToHtml();
 }
 
-// document.querySelector("#newEntry").addEventListener("submit", addEntry);
+// document.querySelector("#newExerciseEntry").addEventListener("submit", addExerciseEntry);
 
 
 function convertToHtml() {
@@ -100,9 +100,18 @@ function convertToHtml() {
 
 convertToHtml();
 
-document.querySelector("#newEntry").addEventListener("submit", function(event)
+const exerciseEntryForm = document.querySelector("#newExerciseEntry");
+
+exerciseEntryForm.addEventListener("submit", function(event)
 {
     console.log("works");
     event.preventDefault();
-    addEntry();
+    addExerciseEntry();
+    exerciseEntryForm.reset();
 });
+
+document.querySelector("#newFoodEntry").addEventListener("submit", function(event)
+{
+    event.preventDefault();
+    addFoodEntry();
+})
