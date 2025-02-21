@@ -8,7 +8,7 @@
     <title>Food Log</title>
     <link rel="stylesheet" href="fitness.css">
     <link rel="icon" href="images/favicon.png">
-    <script src="fitness.js" defer></script>
+    <script src="food.js" defer></script>
 </head>
 <body>
     <header>
@@ -35,10 +35,11 @@
 
             <form id="newFoodEntry" class="entry">
                 <h2>Add New Entry</h2>
-                <p class="date">Date: <input type="text" id="dateInput"></p>
+                <p class="date">Date: <input type="text" id="foodDateInput"></p>
                 <p class="food">Food: <input type="text" id="foodInput"></p>
-                <p class="reps">Calories: <input type="text" id="calorieInput"></p>
-                <p class="heartRate">Grams of Protein: <input type="text" id="proteinInput"></p>
+                <p class="amount">Amount: <input type="text" id="amountInput"></p>
+                <p class="calories">Calories: <input type="number" id="calorieInput"></p>
+                <p class="proteinInput">Grams of Protein: <input type="number" id="proteinInput"></p>
                 <button type="submit" id="submitFoodInput">Add Entry</button>
             </form>
 
