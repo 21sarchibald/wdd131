@@ -55,7 +55,7 @@ function getLocalStorage(key) {
 }
 
 
-let entries = document.querySelector("#pastEntries");
+let pastExerciseEntries = document.querySelector("#pastExerciseEntries");
 
 function addEntry() {
     console.log("run");
@@ -78,14 +78,14 @@ function addEntry() {
 
 function convertToHtml() {
 
-    pastEntries.innerHTML = "";
+    pastExerciseEntries.innerHTML = "";
 
     let entryList = getLocalStorage("currentEntries");
     
     for (let i = entryList.length - 1; i >= 0; i--) {
        entry = entryList[i];
 
-       entries.innerHTML +=
+       pastExerciseEntries.innerHTML +=
          `
             <div class="exerciseEntry">
                 <h2>Date: ${entry.date}</h2>
