@@ -106,6 +106,7 @@ function convertToExerciseHtml() {
             </div>
         `
     }   
+    setLocalStorage("pastExerciseEntries", entryList);
 }   
 
 const exerciseEntryForm = document.querySelector("#newExerciseEntry");
