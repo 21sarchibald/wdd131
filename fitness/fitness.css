@@ -60,6 +60,7 @@ main {
 h1 {
     padding: 20px;
     font-family: "Titillium", serif;
+    text-align: center;
 }
 
 .entry {
@@ -118,6 +119,29 @@ h1 {
 
 #sideBarButton:hover {
     background: #D4D4DF;
+}
+
+footer {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    line-height: 2em;
+    align-content: center;
+    background-color: #D4D4DF;
+}
+
+footer > img {
+    width: 200px;
+    padding: 10px;
+}
+
+.footer-links {
+    display: flex;
+    margin: 5px;
+}
+
+footer > p {
+    align-self: center;
 }
 
 .hide {
