@@ -37,7 +37,9 @@ header > img {
     width: 200px;
 }
 
-header li {
+#header-links {
+    display: flex;
+    flex-direction: column;
     padding: 5px;
     color: #2F3C7E;
     background-color: #D4D4DF;
@@ -86,7 +88,11 @@ h1 {
     font-family: "Exo", serif;
 }
 
-#newEntry h2 {
+button:hover {
+    background-color: #363637;
+}
+
+#newExerciseEntry h2, #newFoodEntry h2 {
     background-color: #2F3C7E;
     color: white;
     text-align: center;
@@ -98,6 +104,7 @@ h1 {
     background-color: #363637;
     width: 100%;
     color: #D4D4DF;
+    z-index: -1;
 }
 
 .side-bar img {
@@ -128,6 +135,7 @@ footer {
     line-height: 2em;
     align-content: center;
     background-color: #D4D4DF;
+    z-index: 1;
 }
 
 footer > img {
@@ -138,10 +146,15 @@ footer > img {
 .footer-links {
     display: flex;
     margin: 5px;
+    color: #2F3C7E;
+    text-decoration: none;
 }
 
 footer > p {
     align-self: center;
+}
+footer a {
+font-family: "Exo", serif;
 }
 
 .hide {
@@ -151,6 +164,28 @@ footer > p {
 @media screen and (min-width: 500px) {
     .hide {
         display: contents;
+    }
+
+    header {
+        display: flex;
+    }
+
+    #header-links {
+        flex-direction: row;
+        justify-self: left; 
+        align-items: center;
+        margin: 0px;
+        padding: 20px;
+    }
+
+    #header-links a {
+        padding: 30px 50px 30px 50px;
+        text-decoration: none;
+    }
+
+    header img {
+        justify-self: flex-start;
+        margin: 0;
     }
 
     #sideBarButton {
@@ -190,5 +225,22 @@ footer > p {
         margin: 5% 10%;
         justify-self: center;
         padding: 20px;
+    }
+
+    footer {
+        flex-direction: row;
+        align-items: center;
+        justify-items: space-around;
+        padding: 0px;
+    }
+    
+    footer img {
+        margin: 1% 5% 1% 10%;
+    }
+
+    .footer-links {
+        display: flex;
+        flex-direction: column;
+        padding: 0px 10% 0px 5%;
     }
 }
