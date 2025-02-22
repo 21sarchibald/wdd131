@@ -36,9 +36,9 @@ let currentFoodEntries = {
         totalCalories: 1545,
         totalProtein: 116
     }
-
 }
 
+// setLocalStorage("currentFoodEntries", currentFoodEntries);
 
 function setLocalStorage(key, data) { // set needs a key and the data
   localStorage.setItem(key, JSON.stringify(data));
@@ -52,21 +52,22 @@ function addFoodEntry() {
     console.log("run");
 
     date = document.querySelector("#foodDateInput").value;
-    entry = currentFoodEntries[date];
+
+    const currentEntries = getLocalStorage("currentFoodEntries");
 
     if (date in currentFoodEntries) {
         currentFoodEntries[date] =
         {
-            foodsEaten: foodsEaten + document.querySelector("#foodInput").value + " (" + document.querySelector("#amountInput".value) + ")",
-            totalCalories: totalCalories + document.querySelector("#calorieInput").value,
-            totalProtein: totalProtein + document.querySelector("#proteinInput").value
+            foodsEaten: currentEntries[date].foodsEaten + ", " + document.querySelector("#foodInput").value + " (" + document.querySelector("#amountInput").value + ")",
+            totalCalories: parseFloat(currentEntries[date].totalCalories) + parseFloat(document.querySelector("#calorieInput").value),
+            totalProtein: parseFloat(currentEntries[date].totalProtein) + parseFloat(document.querySelector("#proteinInput").value)
         };
     }
 
     else {
         currentFoodEntries[date] =
         {
-            foodsEaten: document.querySelector("#foodInput").value + " (" + document.querySelector("#amountInput".value) + ")",
+            foodsEaten: document.querySelector("#foodInput").value + " (" + document.querySelector("#amountInput").value + ")",
             totalCalories: document.querySelector("#calorieInput").value,
             totalProtein: document.querySelector("#proteinInput").value
         };
@@ -74,6 +75,7 @@ function addFoodEntry() {
 
     setLocalStorage("currentFoodEntries", currentFoodEntries);
     console.log(getLocalStorage("currentFoodEntries"));
+    convertToFoodHtml();
 }
 
 function convertToFoodHtml() {
@@ -88,8 +90,8 @@ function convertToFoodHtml() {
        pastFoodEntries.innerHTML +=
          `
             <div class="entry">
-                <h2 class="date">Date: ${key}}</h2>
-                <p class="food">Foods Eaten: ${entry.foodsEaten})</p>
+                <h2 class="date">Date: ${key}</h2>
+                <p class="food">Foods Eaten: ${entry.foodsEaten}</p>
                 <p class="calories">Total Calories: ${entry.totalCalories}</p>
                 <p class="protein">Total Grams of Protein: ${entry.totalProtein}</p>
             </div>
@@ -106,4 +108,4 @@ foodEntryForm.addEventListener("submit", function(event)
     event.preventDefault();
     addFoodEntry();
     foodEntryForm.reset();
-})
+});

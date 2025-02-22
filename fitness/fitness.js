@@ -41,7 +41,7 @@ let currentExerciseEntries = [
     } 
 ]
 
-setLocalStorage("currentExerciseEntries", currentExerciseEntries);
+// setLocalStorage("currentExerciseEntries", currentExerciseEntries);
 
 console.log(getLocalStorage("currentExerciseEntries"));
 
