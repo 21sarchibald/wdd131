@@ -49,8 +49,6 @@ let currentFoodEntries = {
     }
 }
 
-// setLocalStorage("currentFoodEntries", currentFoodEntries);
-
 function setLocalStorage(key, data) { // set needs a key and the data
   localStorage.setItem(key, JSON.stringify(data));
 }
@@ -60,14 +58,13 @@ function getLocalStorage(key) {
 }
 
 function addFoodEntry() {
-    console.log("run");
 
     date = document.querySelector("#foodDateInput").value;
 
     const currentEntries = getLocalStorage("currentFoodEntries");
 
-    if (date in currentFoodEntries) {
-        currentFoodEntries[date] =
+    if (date in currentEntries) {
+        currentEntries[date] =
         {
             foodsEaten: currentEntries[date].foodsEaten + ", " + document.querySelector("#foodInput").value + " (" + document.querySelector("#amountInput").value + ")",
             totalCalories: parseFloat(currentEntries[date].totalCalories) + parseFloat(document.querySelector("#calorieInput").value),
@@ -76,7 +73,7 @@ function addFoodEntry() {
     }
 
     else {
-        currentFoodEntries[date] =
+        currentEntries[date] =
         {
             foodsEaten: document.querySelector("#foodInput").value + " (" + document.querySelector("#amountInput").value + ")",
             totalCalories: document.querySelector("#calorieInput").value,
@@ -84,7 +81,7 @@ function addFoodEntry() {
         };
     }
 
-    setLocalStorage("currentFoodEntries", currentFoodEntries);
+    setLocalStorage("currentFoodEntries", currentEntries);
     console.log(getLocalStorage("currentFoodEntries"));
     convertToFoodHtml();
 }
@@ -94,11 +91,13 @@ function convertToFoodHtml() {
     pastFoodEntries.innerHTML = "";
 
     let entryList = getLocalStorage("currentFoodEntries");
+    let keysList = Object.keys(entryList);
     
-    for (let key in entryList) {
-       entry = entryList[key];
+    for (let i = keysList.length - 1; i > 0; i--) {
+        key = keysList[i];
+        entry = entryList[key];
 
-       pastFoodEntries.innerHTML +=
+        pastFoodEntries.innerHTML +=
          `
             <div class="entry">
                 <h2 class="date">Date: ${key}</h2>
@@ -107,7 +106,7 @@ function convertToFoodHtml() {
                 <p class="protein">Total Grams of Protein: ${entry.totalProtein}</p>
             </div>
         `
-    }   
+    }
 }   
 
 convertToFoodHtml();
