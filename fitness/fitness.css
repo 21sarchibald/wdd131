@@ -17,6 +17,10 @@ p {
     font-family: "Exo", serif;
 }
 
+label {
+    font-family: "Exo", serif;
+}
+
 header {
     background-color: #D4D4DF;
     text-align: center;
@@ -52,6 +56,12 @@ header a {
 header a:hover {
     background-color: #2F3C7E;
     color: #D4D4DF;
+}
+
+#displayMode {
+    margin-top: 1%;
+    margin-left: 85%;
+    margin-bottom: 1%;
 }
 
 main {
@@ -146,19 +156,50 @@ footer > img {
 .footer-links {
     display: flex;
     margin: 5px;
-    color: #2F3C7E;
-    text-decoration: none;
 }
 
 footer > p {
     align-self: center;
 }
 footer a {
-font-family: "Exo", serif;
+    font-family: "Exo", serif;
+    color: #2F3C7E;
+    text-decoration: none;
 }
 
 .hide {
     display: none;
+}
+
+.dark {
+    background-color: #363637;
+}
+
+.dark .side-bar {
+    background-color: #D4D4DF;
+    color: #363637;
+}
+
+.dark h1 {
+    color: #D4D4DF;
+}
+
+.dark header, .dark footer, .dark #header-links {
+    background-color: #2F3C7E;
+    color: #D4D4DF;
+}
+
+.dark header a {
+    color: #D4D4DF;
+}
+
+header a:hover {
+    background-color: #D4D4DF;
+    color: #2F3C7E;
+}
+
+.dark footer a {
+    color: #D4D4DF;
 }
 
 @media screen and (min-width: 500px) {
@@ -186,6 +227,12 @@ font-family: "Exo", serif;
     header img {
         justify-self: flex-start;
         margin: 0;
+    }
+
+    #displayMode {
+        margin-top: 1%;
+        margin-left: 94%;
+        margin-bottom: 1%;
     }
 
     #sideBarButton {

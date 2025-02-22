@@ -1,3 +1,14 @@
+const themeSelector = document.querySelector("#displayMode");
+function changeTheme() {
+    if (themeSelector.value == "dark") {
+        document.body.classList.add("dark");
+    }
+    else {
+        document.body.classList.remove("dark");
+    }
+}
+document.getElementById("displayMode").addEventListener("change", changeTheme);
+
 function toggleSideBar() {
     const sideBar = document.querySelector(".side-bar");
     const entries = document.querySelector(".entries");
