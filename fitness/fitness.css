@@ -45,8 +45,8 @@ header > img {
     display: flex;
     flex-direction: column;
     padding: 5px;
-    color: #2F3C7E;
     background-color: #D4D4DF;
+    font-size: 1.3em;
 }
 
 header a {
@@ -272,6 +272,7 @@ header a:hover {
         margin: 5% 10%;
         justify-self: center;
         padding: 20px;
+        font-size: 1em;
     }
 
     footer {
