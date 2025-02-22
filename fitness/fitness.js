@@ -108,8 +108,6 @@ function convertToExerciseHtml() {
     }   
 }   
 
-convertToExerciseHtml();
-
 const exerciseEntryForm = document.querySelector("#newExerciseEntry");
 
 exerciseEntryForm.addEventListener("submit", function(event)
