@@ -58,10 +58,10 @@ header a:hover {
     color: #D4D4DF;
 }
 
-#displayMode {
-    margin-top: 1%;
-    margin-left: 85%;
-    margin-bottom: 1%;
+#displayModeDiv {
+    font-size: .8em;
+    text-align: right;
+    padding: 10px;
 }
 
 main {
@@ -173,6 +173,9 @@ footer a {
 
 .dark {
     background-color: #363637;
+}
+.dark #displayModeDiv {
+    color: #D4D4DF;
 }
 
 .dark .side-bar {
