@@ -66,11 +66,9 @@ function getLocalStorage(key) {
   return JSON.parse(localStorage.getItem(key));
 }
 
-
-const pastExerciseEntries = document.querySelector("#pastExerciseEntries");
-
 function addExerciseEntry() {
     console.log("run");
+    
     currentExerciseEntries.push(
         {
             date: document.querySelector("#dateInput").value,
@@ -87,6 +85,8 @@ function addExerciseEntry() {
 
 
 function convertToExerciseHtml() {
+
+    const pastExerciseEntries = document.querySelector("#pastExerciseEntries");
 
     pastExerciseEntries.innerHTML = "";
 
