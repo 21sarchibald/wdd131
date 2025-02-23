@@ -22,36 +22,36 @@ function toggleSideBar() {
 
 document.querySelector("#sideBarButton").addEventListener("click", toggleSideBar);
 
-let currentExerciseEntries = [
-    {
-        date: "02/16/2025",
-        type: "Running",
-        reps: "N/A",
-        heartRate: "164",
-        duration: "20"
-    },
-    {
-        date: "02/17/2025",
-        type: "Boxing",
-        reps: "N/A",
-        heartRate: "164",
-        duration: "60"
-    },
-    {
-        date: "02/18/2025",
-        type: "Cycling",
-        reps: "N/A",
-        heartRate: "168",
-        duration: "50"
-    },
-    {
-        date: "02/19/2025",
-        type: "Situps",
-        reps: "100",
-        heartRate: "144",
-        duration: "15"
-    } 
-]
+// let currentExerciseEntries = [
+//     {
+//         date: "02/16/2025",
+//         type: "Running",
+//         reps: "N/A",
+//         heartRate: "164",
+//         duration: "20"
+//     },
+//     {
+//         date: "02/17/2025",
+//         type: "Boxing",
+//         reps: "N/A",
+//         heartRate: "164",
+//         duration: "60"
+//     },
+//     {
+//         date: "02/18/2025",
+//         type: "Cycling",
+//         reps: "N/A",
+//         heartRate: "168",
+//         duration: "50"
+//     },
+//     {
+//         date: "02/19/2025",
+//         type: "Situps",
+//         reps: "100",
+//         heartRate: "144",
+//         duration: "15"
+//     } 
+// ]
 
 
 console.log(getLocalStorage("currentExerciseEntries"));
@@ -68,7 +68,9 @@ function getLocalStorage(key) {
 convertToExerciseHtml();
 
 function addExerciseEntry() {
-    console.log("run");
+    // console.log("run");
+
+    const currentExerciseEntries = getLocalStorage("currentExerciseEntries");
     
     currentExerciseEntries.push(
         {
@@ -80,23 +82,25 @@ function addExerciseEntry() {
         }
     )
     setLocalStorage("currentExerciseEntries", currentExerciseEntries);
-    console.log(getLocalStorage("currentExerciseEntries"));
+    // console.log(getLocalStorage("currentExerciseEntries"));
     convertToExerciseHtml();
 }
 
 
 function convertToExerciseHtml() {
 
-    const pastExerciseEntries = document.querySelector("#pastExerciseEntries");
+    const exerciseEntries = document.querySelector("#pastExerciseEntries");
 
-    pastExerciseEntries.innerHTML = "";
+    exerciseEntries.innerHTML = "";
 
     let entryList = getLocalStorage("currentExerciseEntries");
+
+    // console.log(getLocalStorage("currentExerciseEntries"));
     
-    for (let i = entryList.length - 1; i >= 0; i--) {
+    for (let i = entryList.length - 1; i > -1; i--) {
        entry = entryList[i];
 
-       pastExerciseEntries.innerHTML +=
+       exerciseEntries.innerHTML +=
          `
             <div class="entry">
                 <h2>Date: ${entry.date}</h2>
@@ -107,14 +111,14 @@ function convertToExerciseHtml() {
             </div>
         `
     }   
-    setLocalStorage("pastExerciseEntries", entryList);
+    setLocalStorage("currentExerciseEntries", entryList);
 }   
 
 const exerciseEntryForm = document.querySelector("#newExerciseEntry");
 
 exerciseEntryForm.addEventListener("submit", function(event)
 {
-    console.log("works");
+    // console.log("works");
     event.preventDefault();
     addExerciseEntry();
     exerciseEntryForm.reset();

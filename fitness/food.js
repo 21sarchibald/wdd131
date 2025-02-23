@@ -82,7 +82,7 @@ function addFoodEntry() {
     }
 
     setLocalStorage("currentFoodEntries", currentEntries);
-    console.log(getLocalStorage("currentFoodEntries"));
+    // console.log(getLocalStorage("currentFoodEntries"));
     convertToFoodHtml();
 }
 
