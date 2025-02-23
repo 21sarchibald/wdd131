@@ -53,7 +53,6 @@ let currentExerciseEntries = [
     } 
 ]
 
-// setLocalStorage("currentExerciseEntries", currentExerciseEntries);
 
 console.log(getLocalStorage("currentExerciseEntries"));
 
@@ -65,6 +64,8 @@ function setLocalStorage(key, data) { // set needs a key and the data
 function getLocalStorage(key) {
   return JSON.parse(localStorage.getItem(key));
 }
+
+convertToExerciseHtml();
 
 function addExerciseEntry() {
     console.log("run");
